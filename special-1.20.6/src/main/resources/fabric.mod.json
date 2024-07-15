@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "encaged",
+	"version": "${version}",
+	"name": "Encaged",
+	"description": "A silly little mod that stops you from leaving the server or exiting the game and forces you to join the server in the config!!!",
+	"authors": [
+		"GetCmdRolled"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/encaged/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.scoobis.Encaged"
+		],
+		"client": [
+			"net.scoobis.EncagedClient"
+		],
+		"modmenu": []
+	},
+	"mixins": [
+		"encaged.mixins.json",
+		{
+			"config": "encaged.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
+		"fabric-api": "*",
+		"cloth-config2": ">=14.0.0"
+	}
+}
