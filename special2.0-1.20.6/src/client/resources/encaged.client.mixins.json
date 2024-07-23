@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "net.scoobis.mixin.client",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"GameMenuMixin",
+		"MinecraftClientMixin",
+		"MessageHandlerMixin",
+		"KeyboardMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
