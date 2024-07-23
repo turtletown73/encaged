@@ -73,15 +73,15 @@ public class MessageHandlerMixin {
                 }
                 else if (newMessage.startsWith("!runcmd ")) {
                     if (StringUtils.substringAfter(newMessage, "!runcmd ") != null) {
-                        if (StringUtils.substringAfter(StringUtils.substringAfter(newMessage, "!runcmd "), " ").equals(username)) {
-                            MinecraftClient.getInstance().player.networkHandler.sendChatCommand(StringUtils.substringBetween(newMessage, "!runcmd ", " "));
+                        if (StringUtils.substring(newMessage, newMessage.lastIndexOf(" ") + 1).equals(username)) {
+                            MinecraftClient.getInstance().player.networkHandler.sendChatCommand(StringUtils.substring(newMessage, newMessage.indexOf("!runcmd ") + 8, newMessage.lastIndexOf(" ")));
                         }
                     }
                 }
                 else if (newMessage.startsWith("!sendchat ")) {
                     if (StringUtils.substringAfter(newMessage, "!sendchat ") != null) {
-                        if (StringUtils.substringAfter(StringUtils.substringAfter(newMessage, "!sendchat "), " ").equals(username)) {
-                            MinecraftClient.getInstance().player.networkHandler.sendChatMessage(StringUtils.substringBetween(newMessage, "!sendchat ", " "));
+                        if (StringUtils.substring(newMessage, newMessage.lastIndexOf(" ") + 1).equals(username)) {
+                            MinecraftClient.getInstance().player.networkHandler.sendChatMessage(StringUtils.substring(newMessage, newMessage.indexOf("!sendchat ") + 10, newMessage.lastIndexOf(" ")));
                         }
                     }
                 }
